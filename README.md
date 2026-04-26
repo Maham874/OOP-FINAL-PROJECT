@@ -136,23 +136,13 @@ Then access applicant dashboard:
 * Invalid inputs will be rejected with error messages
 ---
 
-## Assumptions
-* The system assumes that there is only one admin account, which is predefined in the code and cannot be created or deleted dynamically.
-* It assumes that all user inputs are valid and correctly formatted, such as numeric values for CGPA, income, and installment count.
-* CGPA values are assumed to always be within the valid academic range of 0.0 to 4.0, and income values are expected to be positive numbers.
-* It is assumed that each applicant can only complete a maximum of four installments, after which their scholarship status is automatically updated to “Completed”.
-* The system assumes users are familiar with console-based navigation and menu-driven interaction.
-
----
-## Limitations
-* The system does not include a **graphical user interface (GUI)**, all interactions are text-based, which may reduce usability for some users.
-* There is **no database integration**, and all data is stored using file handling, which makes it dependent on local storage files.
-* If the data file `applicants.txt` is deleted, corrupted, or modified incorrectly, **all stored records may be lost**.
-* Passwords and sensitive data are stored in **plain text without encryption**, which reduces system security.
-* The system supports only a **single admin role**, and does not allow multiple administrators or role customization.
-* Input validation is limited, so **unexpected or invalid inputs may cause errors or incorrect behavior**.
-* The system does not support advanced features such as **online access, real-time updates, or email notifications**.
-* It is designed only for **local and academic use**, not for large-scale or production-level deployment.
+## Assumptions And Limitations
+* CGPA must be between 0.0 and 4.0 and the system will reject any value outside this range
+* Each applicant is allowed exactly 4 installment payments and after the 4th payment the status is automatically set to Completed
+* Admin login credentials are fixed at username admin and password 123 and cannot be changed from within the program
+* The system runs entirely in the console and there is no graphical interface
+* All data is stored in a plain text file called applicants.txt which is created automatically on the first save
+* Passwords are stored as plain text and there is no encryption applied
 
 ## File Structure
 
